@@ -1,0 +1,21 @@
+.cardGroup{
+    @apply
+    flex
+    flex-wrap
+    max-w-7xl
+    mx-auto
+    my-4
+
+}
+.summary{
+    @apply
+    block
+    shadow-sm
+    hover:shadow-md
+    border-zinc-900/10
+    shadow-zinc-900/10
+    rounded-md
+    overflow-hidden
+    h-full
+    m-2
+}
