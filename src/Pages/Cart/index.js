@@ -12,9 +12,14 @@ const Cart = () => {
   return (
     <div className={styles.cardGroup}>
       <div>
-      {cartProducts.map((item) => {
-        return <CartItem key={item.id} item={item} />;
-      })}
+      {
+        waiting ? (<h1>loading...</h1>):
+        cartProducts.map((item)=>{
+                return (
+                    <CartItem item={item} key={item.id}/>
+                )
+            })
+      }
       </div>
       <div className="mx-auto w-80 h-40 text-center justify-center">
         <div className={styles.summary}>
