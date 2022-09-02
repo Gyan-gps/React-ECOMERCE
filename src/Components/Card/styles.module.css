@@ -118,8 +118,8 @@
     shadow-sm
     text-sm
     px-2
-    bg-blue-600
     py-2
+    bg-blue-600
     hover:bg-yellow-500
 }
 

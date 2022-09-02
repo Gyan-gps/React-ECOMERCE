@@ -3,20 +3,18 @@ import styles from "./styles.module.css";
 import { HeartIcon, ShoppingCartIcon, StarIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 import { useCart } from "../../Context/CartContext";
+import { buildQueries } from "@testing-library/react";
 
 const Card = ({ item }) => {
-  // const [data , setData] = useState("");
-  const { items, setItems } = useState([]);
 
+  
   const {
-    cartProducts,
     setCartProducts,
-    favouriteProducts,
     setFavouriteProducts,
     count,
     setCount,
-    totalprice,
-    setTotalPrice
+    totalPrice,
+    setTotalPrice,
   } = useCart();
 
   const handleaddToCartButton = () => {
@@ -35,8 +33,9 @@ const Card = ({ item }) => {
       setCount(count + 1);
       cart.push(item);
       localStorage.setItem("cart", JSON.stringify(cart));
-      setTotalPrice(JSON.parse(localStorage.getItem('price'))+item.price);
-      localStorage.setItem('price',JSON.stringify(totalprice));
+      let p=parseInt(localStorage.getItem("price")) + item.price;
+      setTotalPrice(p);
+      localStorage.setItem("price", JSON.stringify(totalPrice));
     }
   };
 
@@ -104,7 +103,7 @@ const Card = ({ item }) => {
             </div>
           </div>
 
-          <div className={styles.addToCart}>
+          <div className="co">
             <button
               className={styles.addToCartButton}
               onClick={handleaddToCartButton}

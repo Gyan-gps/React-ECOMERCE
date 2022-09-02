@@ -7,7 +7,7 @@ const Cart = () => {
   // const cart = JSON.parse(localStorage.getItem('cart'));
 
 
-  const { cartProducts, waiting, setWaiting ,totalprice,setTotalPrice} = useCart();
+  const { cartProducts, waiting, setWaiting ,totalPrice,setTotalPrice} = useCart();
   
   return (
     <div className={styles.cardGroup}>
@@ -26,7 +26,7 @@ const Cart = () => {
          <h1>Order Summary</h1>
          <div className="flex mt-2">
           <h4 className="mx-auto">SubTotal</h4>
-          <h1 className="mx-auto pl-1">$ {totalprice}</h1>
+          <h1 className="mx-auto pl-1">$ {totalPrice}</h1>
          </div>
          <div className="flex">
           <h4 className="mx-auto">Shiping Estimate</h4>
@@ -38,7 +38,7 @@ const Cart = () => {
          </div>
          <div className="flex mt-4">
           <h4 className="mx-auto pl-4">Order Total</h4>
-          <h1 className="mx-auto pr-4">$ {totalprice+10}</h1>
+          <h1 className="mx-auto pr-4">$ {totalPrice+10}</h1>
          </div>
         </div>
       </div>

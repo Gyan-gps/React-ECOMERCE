@@ -14,7 +14,7 @@ const Favourite = ({ item }) => {
     setFavouriteProducts,
     count,
     setCount,
-    totalprice,
+    totalPrice,
     setTotalPrice
   } = useCart();
 
@@ -34,8 +34,9 @@ const Favourite = ({ item }) => {
       setCount(count + 1);
       cart.push(item);
       localStorage.setItem("cart", JSON.stringify(cart));
-      setTotalPrice(JSON.parse(localStorage.getItem('price'))+item.price);
-      localStorage.setItem('price',JSON.stringify(totalprice));
+      let p=parseInt(localStorage.getItem("price")) + item.price;
+      setTotalPrice(p);
+      localStorage.setItem('price',JSON.stringify(totalPrice));
     }
     // console.log(count, cartProducts);
   };

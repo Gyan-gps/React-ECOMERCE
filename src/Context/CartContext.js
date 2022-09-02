@@ -7,7 +7,7 @@ export const CartContextProvider = ({ children }) => {
   const [favouriteProducts, setFavouriteProducts] = useState([]);
   const [waiting, setWaiting] = useState(false);
   const [count, setCount] = useState(0); 
-  const [totalprice,setTotalPrice] = useState(0);
+  const [totalPrice,setTotalPrice] = useState(0);
   
 //   const [isCart, setIsCart] = useState();
 //   const [isFavourite, setIsFavourite] = useState();
@@ -15,7 +15,7 @@ export const CartContextProvider = ({ children }) => {
   useEffect(()=>{
     const price = localStorage.getItem("price");
     if (price) {
-        setTotalPrice(JSON.parse(price));
+        setTotalPrice(parseInt(price));
     }
     else{
         localStorage.setItem('price',JSON.stringify(0));
@@ -49,7 +49,7 @@ export const CartContextProvider = ({ children }) => {
     setWaiting,
     count,
     setCount,
-    totalprice,
+    totalPrice,
     setTotalPrice
   };
 

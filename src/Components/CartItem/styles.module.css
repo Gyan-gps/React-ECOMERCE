@@ -1,8 +1,7 @@
 .card{
     @apply
-    w-full
-    /* flex */
     p-4
+    w-80
 }
 
 .summary{
@@ -40,6 +39,7 @@
     pb-64
     overflow-hidden
     shadow-sm
+    w-full
 }
 .cardImg{
     @apply
